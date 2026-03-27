@@ -1,0 +1,8 @@
+# Phase 1: notebooks in phase1_global/; corpus from data/build_corpus.py; see EMBEDDINGS_COMPARE.md
+gensim>=4.3.0
+mittens>=0.2
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+matplotlib>=3.7
+ipython>=8.0
