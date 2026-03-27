@@ -1,34 +1,34 @@
 # The Coffee Flavor Map
 
-مشروع تطبيقي واحد النطاق: بناء **فضاء دلالي** لنكهات القهوة من نصوص مراجعات/توصيفات، ومقارنة **ثلاثة** تمثيلات إحصائية عالمية على **نفس الكوربوس**:
+A single-scope project: build a **semantic space** for coffee flavors from review/description text, and compare **three** global statistical representations on the **same corpus**:
 
-- **Word2Vec** (تنبؤ سياق محلي)
-- **GloVe** (إحصاءات تزامن عالمية)
-- **FastText** (نفس فكرة السياق مع **n-grams** حرفية)
+- **Word2Vec** — local context prediction  
+- **GloVe** — global co-occurrence statistics  
+- **FastText** — same context idea with **character n-grams**
 
-الخلاصة التشغيلية والمقارنة: [`phase1_global/EMBEDDINGS_COMPARE.md`](phase1_global/EMBEDDINGS_COMPARE.md)  
-روابط الأوراق الأصلية: [`phase1_global/PAPERS.md`](phase1_global/PAPERS.md)
-
----
-
-## الربط مع مسار التعلّم
-
-يُقابل هذا المشروع **Phase A** في الدليل العام (Word2Vec، GloVe، FastText، فرضية التوزيع).
+Run comparison and results: [`phase1_global/EMBEDDINGS_COMPARE.md`](phase1_global/EMBEDDINGS_COMPARE.md)  
+Paper links: [`phase1_global/PAPERS.md`](phase1_global/PAPERS.md)
 
 ---
 
-## المراجع داخل المستودع
+## How this fits the learning path
 
-- [`phase1_global/PAPERS.md`](phase1_global/PAPERS.md) — روابط الأوراق + تنفيذات المشروع.
-- [`phase1_global/EMBEDDINGS_COMPARE.md`](phase1_global/EMBEDDINGS_COMPARE.md) — مقارنة التشغيل على كوربوس القهوة.
-- [`WORK_PLAN.md`](WORK_PLAN.md) — خطة العمل (Phase 1 فقط).
-- [`../ML_NLP_Paper_Reading_Guide.md`](../ML_NLP_Paper_Reading_Guide.md) — ترتيب الأوراق والمفاهيم.
-- [`../ml-nlp-guide.html`](../ml-nlp-guide.html) — شرح مفصّل + أمثلة.
-- [`../GOAL_AND_APPROACH.md`](../GOAL_AND_APPROACH.md) — هدف الرحلة البحثية–التطبيقية.
+This project maps to **Phase A** in the main guide (Word2Vec, GloVe, FastText, distributional hypothesis).
 
 ---
 
-## هيكل المشروع
+## References in this repository
+
+- [`phase1_global/PAPERS.md`](phase1_global/PAPERS.md) — original papers + how we implement them here  
+- [`phase1_global/EMBEDDINGS_COMPARE.md`](phase1_global/EMBEDDINGS_COMPARE.md) — side-by-side results on the coffee corpus  
+- [`WORK_PLAN.md`](WORK_PLAN.md) — work plan (Phase 1 only)  
+- [`../ML_NLP_Paper_Reading_Guide.md`](../ML_NLP_Paper_Reading_Guide.md) — paper order and concepts (parent repo)  
+- [`../ml-nlp-guide.html`](../ml-nlp-guide.html) — longer explanation + examples  
+- [`../GOAL_AND_APPROACH.md`](../GOAL_AND_APPROACH.md) — research/learning goals (parent repo)
+
+---
+
+## Project layout
 
 ```
 coffee-flavor-map/
@@ -36,31 +36,31 @@ coffee-flavor-map/
 ├── WORK_PLAN.md
 ├── requirements.txt
 ├── data/
-│   ├── build_corpus.py   ← توليد corpus.txt من CSV الخام
-│   ├── raw/              ← simplified_coffee.csv (وغيره اختياري)
-│   └── processed/        ← corpus.txt للتدريب
-└── phase1_global/        ← النوتبوكات + المقارنة + المراجع
+│   ├── build_corpus.py   ← build corpus.txt from raw CSV
+│   ├── raw/              ← simplified_coffee.csv (+ optional extra CSVs)
+│   └── processed/        ← corpus.txt for training
+└── phase1_global/        ← notebooks + comparison + paper links
 ```
 
 ---
 
-## كيف تبدأ
+## Getting started
 
-1. ثبّت `requirements.txt`. لإعادة بناء الكوربوس من المصدر: `python data/build_corpus.py` من مجلد `coffee-flavor-map`.
-2. افتح النوتبوكات في `phase1_global/` وشغّلها (أو اقرأ المخرجات المحفوظة فيها).
-3. اقرأ **`EMBEDDINGS_COMPARE.md`** للمقارنة، و**`WORK_PLAN.md`** للتفاصيل الإجرائية.
+1. Install dependencies: `pip install -r requirements.txt`. To rebuild the corpus from source, run `python data/build_corpus.py` from the `coffee-flavor-map` directory.  
+2. Open the notebooks under `phase1_global/` and run them (or use the saved outputs already in the notebooks).  
+3. Read **`EMBEDDINGS_COMPARE.md`** for the comparison and **`WORK_PLAN.md`** for procedural detail.
 
-هدف المشروع: **تعلّم بالتطبيق** — تطبيق ما نقرأه على كوربوس قهوة حقيقي ومقارنة النماذج صراحةً.
+**Goal:** learn by doing — apply what you read to a real coffee corpus and compare models explicitly.
 
 ---
 
 ## GitHub
 
-المستودع: [github.com/YOUSEF-ysfxjo/coffee-flavor-map](https://github.com/YOUSEF-ysfxjo/coffee-flavor-map)
+Repository: [github.com/YOUSEF-ysfxjo/coffee-flavor-map](https://github.com/YOUSEF-ysfxjo/coffee-flavor-map)
 
 ```bash
 git clone https://github.com/YOUSEF-ysfxjo/coffee-flavor-map.git
 cd coffee-flavor-map
 pip install -r requirements.txt
-python data/build_corpus.py   # اختياري إن أردت إعادة بناء corpus.txt
+python data/build_corpus.py   # optional: regenerate corpus.txt
 ```
